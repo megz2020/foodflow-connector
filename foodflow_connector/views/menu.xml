@@ -1,0 +1,18 @@
+<odoo>
+    <menuitem id="menu_foodflow_root" name="FoodFlow"
+              web_icon="foodflow_connector,static/description/icon.png"
+              action="action_foodflow_cockpit"
+              groups="group_foodflow_manager"/>
+    <menuitem id="menu_foodflow_cockpit" name="Cockpit"
+              parent="menu_foodflow_root" action="action_foodflow_cockpit"
+              sequence="1"/>
+    <menuitem id="menu_foodflow_setup" name="Setup"
+              parent="menu_foodflow_root" action="action_foodflow_setup_wizard"
+              sequence="2"/>
+    <menuitem id="menu_foodflow_config" name="Connection"
+              parent="menu_foodflow_root" action="action_foodflow_config"
+              sequence="3"/>
+    <menuitem id="menu_foodflow_logs" name="Sync Logs"
+              parent="menu_foodflow_root" action="action_foodflow_sync_log"
+              sequence="4"/>
+</odoo>

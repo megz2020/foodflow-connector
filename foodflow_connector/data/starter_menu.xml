@@ -1,0 +1,55 @@
+<odoo>
+    <data noupdate="1">
+        <!-- Starter categories -->
+        <record id="starter_cat_mains" model="pos.category">
+            <field name="name">Mains</field>
+            <field name="sequence">10</field>
+        </record>
+        <record id="starter_cat_sides" model="pos.category">
+            <field name="name">Sides</field>
+            <field name="sequence">20</field>
+        </record>
+        <record id="starter_cat_drinks" model="pos.category">
+            <field name="name">Drinks</field>
+            <field name="sequence">30</field>
+        </record>
+
+        <!-- Starter products -->
+        <record id="starter_prod_burger" model="product.template">
+            <field name="name">Classic Burger</field>
+            <field name="list_price">8.50</field>
+            <field name="type">consu</field>
+            <field name="is_storable" eval="True"/>
+            <field name="available_in_pos" eval="False"/>
+            <field name="sale_ok" eval="True"/>
+            <field name="pos_categ_ids" eval="[(6, 0, [ref('starter_cat_mains')])]"/>
+        </record>
+        <record id="starter_prod_pizza" model="product.template">
+            <field name="name">Margherita Pizza</field>
+            <field name="list_price">10.00</field>
+            <field name="type">consu</field>
+            <field name="is_storable" eval="True"/>
+            <field name="available_in_pos" eval="False"/>
+            <field name="sale_ok" eval="True"/>
+            <field name="pos_categ_ids" eval="[(6, 0, [ref('starter_cat_mains')])]"/>
+        </record>
+        <record id="starter_prod_fries" model="product.template">
+            <field name="name">French Fries</field>
+            <field name="list_price">3.50</field>
+            <field name="type">consu</field>
+            <field name="is_storable" eval="True"/>
+            <field name="available_in_pos" eval="False"/>
+            <field name="sale_ok" eval="True"/>
+            <field name="pos_categ_ids" eval="[(6, 0, [ref('starter_cat_sides')])]"/>
+        </record>
+        <record id="starter_prod_cola" model="product.template">
+            <field name="name">Soft Drink</field>
+            <field name="list_price">2.00</field>
+            <field name="type">consu</field>
+            <field name="is_storable" eval="True"/>
+            <field name="available_in_pos" eval="False"/>
+            <field name="sale_ok" eval="True"/>
+            <field name="pos_categ_ids" eval="[(6, 0, [ref('starter_cat_drinks')])]"/>
+        </record>
+    </data>
+</odoo>

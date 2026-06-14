@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_foodflow_config,foodflow.config,model_foodflow_config,group_foodflow_manager,1,1,1,1
+access_foodflow_sync_log,foodflow.sync.log,model_foodflow_sync_log,group_foodflow_manager,1,1,1,1
+access_foodflow_setup_wizard,foodflow.setup.wizard,model_foodflow_setup_wizard,group_foodflow_manager,1,1,1,1
+access_foodflow_cockpit,foodflow.cockpit,model_foodflow_cockpit,group_foodflow_manager,1,0,0,0

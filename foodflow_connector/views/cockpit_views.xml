@@ -1,0 +1,6 @@
+<odoo>
+    <record id="action_foodflow_cockpit" model="ir.actions.client">
+        <field name="name">Restaurant Cockpit</field>
+        <field name="tag">foodflow_cockpit</field>
+    </record>
+</odoo>

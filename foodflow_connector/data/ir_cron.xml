@@ -1,0 +1,11 @@
+<odoo>
+    <record id="cron_foodflow_sync" model="ir.cron">
+        <field name="name">FoodFlow: scheduled sync</field>
+        <field name="model_id" ref="model_foodflow_sync"/>
+        <field name="state">code</field>
+        <field name="code">model.cron_run()</field>
+        <field name="interval_number">10</field>
+        <field name="interval_type">minutes</field>
+        <field name="active" eval="True"/>
+    </record>
+</odoo>

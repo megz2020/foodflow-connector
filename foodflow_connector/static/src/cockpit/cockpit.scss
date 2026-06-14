@@ -1,0 +1,188 @@
+$ff-primary: #e31e24;
+$ff-hover:   #c41920;
+$ff-green:   #16a34a;
+$ff-amber:   #f59e0b;
+$ff-font:    'Cairo', 'Noto Kufi Arabic', sans-serif;
+
+.ff-cockpit {
+    font-family: $ff-font;
+    padding: 24px;
+    background: #f3f4f6;
+    min-height: 100%;
+
+    .ff-cockpit-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: linear-gradient(120deg, $ff-primary 0%, $ff-hover 100%);
+        border-radius: 16px;
+        padding: 22px 28px;
+        margin-bottom: 24px;
+        box-shadow: 0 8px 24px rgba(227, 30, 36, 0.25);
+
+        .ff-brand {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+
+            .ff-logo {
+                font-size: 30px;
+                font-weight: 800;
+                color: #fff;
+                letter-spacing: 0.5px;
+            }
+            .ff-subtitle {
+                font-size: 16px;
+                color: rgba(255, 255, 255, 0.85);
+            }
+        }
+
+        .ff-refresh {
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.15);
+            color: #fff;
+            border-radius: 8px;
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.15s ease;
+
+            &:hover { background: rgba(255, 255, 255, 0.28); }
+            i { margin-right: 6px; }
+        }
+    }
+
+    .ff-loading {
+        color: #6b7280;
+        font-size: 18px;
+        padding: 40px 0;
+        text-align: center;
+        i { margin-right: 8px; }
+    }
+
+    .ff-tiles {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+        gap: 16px;
+        margin-bottom: 24px;
+
+        .ff-tile {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: #fff;
+            border-radius: 14px;
+            padding: 20px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid #d1d5db;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+            &:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 18px rgba(0, 0, 0, 0.10);
+            }
+
+            .ff-tile-icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 48px;
+                height: 48px;
+                border-radius: 12px;
+                font-size: 22px;
+                background: #f3f4f6;
+                color: #6b7280;
+                flex: 0 0 auto;
+            }
+
+            .ff-tile-value {
+                font-size: 28px;
+                font-weight: 800;
+                color: #111827;
+                line-height: 1.1;
+            }
+            .ff-tile-label {
+                margin-top: 4px;
+                font-size: 13px;
+                color: #6b7280;
+            }
+
+            &.ff-tile-primary {
+                border-left-color: $ff-primary;
+                .ff-tile-icon { background: rgba(227, 30, 36, 0.10); color: $ff-primary; }
+            }
+            &.ff-tile-warn {
+                border-left-color: $ff-amber;
+                .ff-tile-icon { background: rgba(245, 158, 11, 0.12); color: $ff-amber; }
+            }
+            &.ff-tile-green {
+                border-left-color: $ff-green;
+                .ff-tile-icon { background: rgba(22, 163, 74, 0.12); color: $ff-green; }
+            }
+        }
+    }
+
+    .ff-charts {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 16px;
+        margin-bottom: 24px;
+
+        .ff-card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 20px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+
+            &.ff-card-wide { grid-column: span 2; }
+
+            .ff-card-title {
+                font-size: 15px;
+                font-weight: 700;
+                color: #111827;
+                margin-bottom: 14px;
+            }
+            .ff-chart-wrap {
+                position: relative;
+                height: 240px;
+            }
+        }
+    }
+
+    @media (max-width: 900px) {
+        .ff-charts .ff-card.ff-card-wide { grid-column: span 1; }
+    }
+
+    .ff-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+
+        .ff-btn {
+            border: 1px solid #d1d5db;
+            background: #fff;
+            color: #111827;
+            border-radius: 10px;
+            padding: 12px 20px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.15s ease;
+
+            i { margin-right: 8px; }
+            &:hover { background: #f3f4f6; transform: translateY(-1px); }
+
+            &.ff-btn-primary {
+                background: $ff-primary;
+                border-color: $ff-primary;
+                color: #fff;
+
+                &:hover {
+                    background: $ff-hover;
+                    border-color: $ff-hover;
+                }
+            }
+        }
+    }
+}

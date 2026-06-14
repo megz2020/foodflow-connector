@@ -1,0 +1,43 @@
+<odoo>
+    <record id="view_foodflow_setup_wizard" model="ir.ui.view">
+        <field name="name">foodflow.setup.wizard.form</field>
+        <field name="model">foodflow.setup.wizard</field>
+        <field name="arch" type="xml">
+            <form string="FoodFlow Restaurant Setup">
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="restaurant_name" placeholder="My Restaurant"/></h1>
+                    </div>
+                    <group string="Restaurant">
+                        <field name="table_count"/>
+                        <field name="create_pos"/>
+                        <field name="seed_sample"/>
+                    </group>
+                    <group string="Online (FoodFlow)">
+                        <field name="connector_enabled"/>
+                        <field name="base_url"
+                               invisible="not connector_enabled"
+                               required="connector_enabled"/>
+                        <field name="api_token" password="True"
+                               invisible="not connector_enabled"
+                               required="connector_enabled"/>
+                        <field name="import_menu" invisible="not connector_enabled"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="action_apply" type="object" string="Set Up Restaurant"
+                            class="btn-primary"/>
+                    <button name="action_test" type="object" string="Test Connection"
+                            invisible="not connector_enabled"/>
+                    <button string="Cancel" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="action_foodflow_setup_wizard" model="ir.actions.act_window">
+        <field name="name">FoodFlow Setup</field>
+        <field name="res_model">foodflow.setup.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

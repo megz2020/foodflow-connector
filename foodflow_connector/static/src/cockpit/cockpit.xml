@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="foodflow_connector.Cockpit">
+        <div class="ff-cockpit">
+            <div class="ff-cockpit-header">
+                <div class="ff-brand">
+                    <span class="ff-logo">FoodFlow</span>
+                    <span class="ff-subtitle">Restaurant Cockpit</span>
+                </div>
+                <button class="ff-refresh" t-on-click="() => this.refresh()" title="Refresh">
+                    <i class="fa fa-refresh"/> Refresh
+                </button>
+            </div>
+
+            <div t-if="state.loading" class="ff-loading">
+                <i class="fa fa-circle-o-notch fa-spin"/> Loading…
+            </div>
+
+            <t t-else="">
+                <div class="ff-tiles">
+                    <div class="ff-tile ff-tile-primary">
+                        <div class="ff-tile-icon"><i class="fa fa-money"/></div>
+                        <div class="ff-tile-body">
+                            <div class="ff-tile-value">
+                                <t t-esc="state.data.currency_symbol"/><t t-esc="state.data.today_sales.toFixed(2)"/>
+                            </div>
+                            <div class="ff-tile-label">Today's Sales</div>
+                        </div>
+                    </div>
+                    <div class="ff-tile">
+                        <div class="ff-tile-icon"><i class="fa fa-shopping-cart"/></div>
+                        <div class="ff-tile-body">
+                            <div class="ff-tile-value" t-esc="state.data.open_orders"/>
+                            <div class="ff-tile-label">Open Orders</div>
+                        </div>
+                    </div>
+                    <div class="ff-tile">
+                        <div class="ff-tile-icon"><i class="fa fa-cutlery"/></div>
+                        <div class="ff-tile-body">
+                            <div class="ff-tile-value" t-esc="state.data.tables_in_use"/>
+                            <div class="ff-tile-label">Tables in Use</div>
+                        </div>
+                    </div>
+                    <div class="ff-tile ff-tile-warn">
+                        <div class="ff-tile-icon"><i class="fa fa-exclamation-triangle"/></div>
+                        <div class="ff-tile-body">
+                            <div class="ff-tile-value" t-esc="state.data.low_stock_count"/>
+                            <div class="ff-tile-label">Low-Stock Items</div>
+                        </div>
+                    </div>
+                    <div t-if="state.data.connector_enabled" class="ff-tile ff-tile-green">
+                        <div class="ff-tile-icon"><i class="fa fa-cloud"/></div>
+                        <div class="ff-tile-body">
+                            <div class="ff-tile-value" t-esc="state.data.foodflow_orders_today"/>
+                            <div class="ff-tile-label">FoodFlow Orders Today</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ff-charts">
+                    <div class="ff-card ff-card-wide">
+                        <div class="ff-card-title">Sales — Last 7 Days</div>
+                        <div class="ff-chart-wrap">
+                            <canvas t-ref="trendCanvas"/>
+                        </div>
+                    </div>
+                    <div class="ff-card">
+                        <div class="ff-card-title">Top Items This Week</div>
+                        <div class="ff-chart-wrap">
+                            <canvas t-ref="itemsCanvas"/>
+                        </div>
+                    </div>
+                    <div t-if="state.data.connector_enabled" class="ff-card">
+                        <div class="ff-card-title">Order Source Today</div>
+                        <div class="ff-chart-wrap">
+                            <canvas t-ref="sourceCanvas"/>
+                        </div>
+                    </div>
+                </div>
+            </t>
+
+            <div class="ff-actions">
+                <button class="ff-btn ff-btn-primary" t-on-click="() => this.openRegister()">
+                    <i class="fa fa-desktop"/> Open Register
+                </button>
+                <button class="ff-btn" t-on-click="() => this.openAction('point_of_sale.action_client_product_menu')">
+                    <i class="fa fa-book"/> Menu
+                </button>
+                <button class="ff-btn" t-on-click="() => this.openAction('point_of_sale.action_pos_pos_form')">
+                    <i class="fa fa-list"/> Orders
+                </button>
+                <button class="ff-btn" t-on-click="() => this.openAction('stock.product_template_action_product')">
+                    <i class="fa fa-cubes"/> Inventory
+                </button>
+                <button class="ff-btn" t-on-click="() => this.openAction('foodflow_connector.action_foodflow_setup_wizard')">
+                    <i class="fa fa-cog"/> Setup
+                </button>
+            </div>
+        </div>
+    </t>
+</templates>

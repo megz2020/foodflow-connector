@@ -1,0 +1,13 @@
+<odoo>
+    <record id="group_foodflow_manager" model="res.groups">
+        <field name="name">FoodFlow Manager</field>
+        <field name="user_ids" eval="[(4, ref('base.user_admin'))]"/>
+    </record>
+
+    <!-- Turnkey: every POS manager is also a FoodFlow manager, so the
+         Restaurant Cockpit app and setup wizard are reachable out of the box
+         without hand-assigning the FoodFlow group to each user. -->
+    <record id="point_of_sale.group_pos_manager" model="res.groups">
+        <field name="implied_ids" eval="[(4, ref('group_foodflow_manager'))]"/>
+    </record>
+</odoo>
