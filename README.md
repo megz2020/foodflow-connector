@@ -19,14 +19,14 @@
 this connector keeps everything in sync with Odoo. One subscription replaces a pile of expensive
 tools — and it pays for itself with a single extra order a day.
 
-- 📱 **Your own branded online store** — digital menu, delivery & pickup, QR table ordering
-- 💸 **Keep 100% of every order** — no 25–30% marketplace commissions
-- ⚡ **Live in minutes** — your Odoo menu publishes online automatically
-- 🍽️ **Kitchen display & reservations** — full front-of-house, included
-- 👥 **Own your customer data** — insights a marketplace never gives you
-- 🔄 **Zero double entry** — online orders land in Odoo POS automatically
+- **Your own branded online store** — digital menu, delivery & pickup, QR table ordering
+- **Keep 100% of every order** — no 25–30% marketplace commissions
+- **Live in minutes** — your Odoo menu publishes online automatically
+- **Kitchen display & reservations** — full front-of-house, included
+- **Own your customer data** — insights a marketplace never gives you
+- **Zero double entry** — online orders land in Odoo POS automatically
 
-### 👉 [Start free on foodflo.app](https://foodflo.app)
+### [Start free on foodflo.app](https://foodflo.app)
 
 ---
 
@@ -34,11 +34,11 @@ tools — and it pays for itself with a single extra order a day.
 
 | | Feature |
 |---|---|
-| ⚡ | **One-click setup wizard** — provisions POS, dining floor, tables, payment methods and a starter menu (idempotent, safe to re-run) |
-| 🔄 | **Bidirectional sync** — menu items push to foodflo.app; online orders pull into Odoo POS on a schedule you control |
-| 📊 | **Real-time Restaurant Cockpit** — sales, orders, tables, low-stock and online activity with interactive charts |
-| 🔌 | **Connection testing & sync logs** — validate your API connection and audit every sync |
-| 🍔 | **Online + dine-in, unified** — one menu, one order stream |
+| | **One-click setup wizard** — provisions POS, dining floor, tables, payment methods and a starter menu (idempotent, safe to re-run) |
+| | **Bidirectional sync** — menu items push to foodflo.app; online orders pull into Odoo POS on a schedule you control |
+| | **Real-time Restaurant Cockpit** — sales, orders, tables, low-stock and online activity with interactive charts |
+| | **Connection testing & sync logs** — validate your API connection and audit every sync |
+| | **Online + dine-in, unified** — one menu, one order stream |
 
 ---
 
@@ -80,6 +80,12 @@ permission. See [LICENSE](LICENSE).
 
 "FoodFlow" and "foodflo.app" are brands of the author. Use of the code does not grant any right to
 use the names or logos, or to imply endorsement.
+
+---
+
+## Author
+
+**Ahmed Eissa** — [LinkedIn](https://www.linkedin.com/in/megzz/)
 
 ---
 
