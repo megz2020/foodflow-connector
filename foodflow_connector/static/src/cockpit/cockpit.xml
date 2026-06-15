@@ -13,7 +13,7 @@
             </div>
 
             <div t-if="state.loading" class="ff-loading">
-                <i class="fa fa-circle-o-notch fa-spin"/> Loading…
+                <i class="fa fa-circle-o-notch fa-spin"/> Loading...
             </div>
 
             <t t-else="">
@@ -59,7 +59,7 @@
 
                 <div class="ff-charts">
                     <div class="ff-card ff-card-wide">
-                        <div class="ff-card-title">Sales — Last 7 Days</div>
+                        <div class="ff-card-title">Sales - Last 7 Days</div>
                         <div class="ff-chart-wrap">
                             <canvas t-ref="trendCanvas"/>
                         </div>
